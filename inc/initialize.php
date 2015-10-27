@@ -9,7 +9,7 @@
 	// (\ for Windows, / for Unix)
 	defined('DS') ? null : define('DS', DIRECTORY_SEPARATOR);
 
-	defined('SITE_ROOT') ? null : define('SITE_ROOT', $_SERVER['DOCUMENT_ROOT'].DS.'mis.unijos.edu.ng'.DS.'app_transcript_template');
+	defined('SITE_ROOT') ? null : define('SITE_ROOT', $_SERVER['DOCUMENT_ROOT'].DS.'mis.unijos.edu.ng'.DS.'transcripts');
 	defined('LIB_PATH') ? null : define('LIB_PATH', SITE_ROOT.DS.'inc');
 
 	//load config file first

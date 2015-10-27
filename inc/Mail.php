@@ -7,7 +7,7 @@ require_once("initialize.php");
 class Mail {
 	public static function format_email($info, $format) {
 		//set the root
-		$root = $_SERVER['DOCUMENT_ROOT'].'/mis.unijos.edu.ng/app_transcript_template';
+		$root = $_SERVER['DOCUMENT_ROOT'].'/mis.unijos.edu.ng/transcripts';
 
 		//grab the template content
 		$template = file_get_contents($root.'/mail_templates/signup_template.'.$format);
@@ -16,7 +16,7 @@ class Mail {
 		$template = ereg_replace('{APPLICANT}', "Applicant", $template);
 		$template = ereg_replace('{EMAIL}', customEncrypt($info['email']), $template);
 		$template = ereg_replace('{KEY}', $info['key'], $template);
-		$template = ereg_replace('{SITEPATH}','http://localhost/mis.unijos.edu.ng/app_transcript_template', $template);
+		$template = ereg_replace('{SITEPATH}','http://localhost/mis.unijos.edu.ng/transcripts', $template);
 			
 		//return the html of the template
 		return $template;

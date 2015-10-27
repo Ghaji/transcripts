@@ -125,7 +125,7 @@
     </table>
     <?php
         if(isset($_POST['app_form_no']) && !empty($_POST['app_form_no'])) {
-            $return_url = 'http://'.$_SERVER['HTTP_HOST'].'/mis.unijos.edu.ng/app_transcript_template/processpayment.php'; 
+            $return_url = 'http://'.$_SERVER['HTTP_HOST'].'/mis.unijos.edu.ng/transcripts/processpayment.php'; 
             $total_kobo = $total_amount;
             $fullname = $user->full_name;
             $transaction_id = $_POST['app_form_no'];

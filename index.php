@@ -25,7 +25,7 @@
 		<div class="container">
 			<div class="row-fluid">
 				<div class="span7" >
-				<h4>University of Smartweb Online Transcript Payment System</h4>
+				<h4>University of Jos Online Transcript Payment System</h4>
 		        <hr>
 
 		      	<h3><i class="icon-bullhorn"></i> NEWS</h3>
