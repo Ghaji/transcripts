@@ -115,8 +115,8 @@
                 <td>
                     <div>                        
                         <div id="hcard-Admiral-Valdore" class="vcard">
-                            <div class="org">Smart University </div>
-                            <a class="email">PMB 1111 Jos, Jos.</a>
+                            <div class="org">University of Jos </div>
+                            <a class="email">PMB 2084 Jos, Jos.</a>
                             <div class="adr">
                                 <div>Plateau State</div>
                                 <div>Nigeria</div>

@@ -13,29 +13,30 @@
 
    
     $db = new MySQLDatabase();
-// get all total notifications for the aplicant
-$notifications_sql = "SELECT count(*) FROM `notifications` WHERE applicant_id ='".$session->id."'";
-$total_notifications = $db->query($notifications_sql);
-$total_notifications = $db->fetch_array($total_notifications);
-$total_notifications = array_shift($total_notifications);
+    // get all total notifications for the aplicant
+    // $notifications_sql = "SELECT count(*) FROM `notifications` WHERE applicant_id ='".$session->id."'";
+    // $total_notifications = $db->query($notifications_sql);
+    // $total_notifications = $db->fetch_array($total_notifications);
+    // $total_notifications = array_shift($total_notifications);
 
-
-// get  total  Read And Unread notifications for the aplicant
-//function pd_get_total_int($column, $int_value, $applicant_id)
-function pd_get_total_int($column, $int_value){
-    global $db;
-    $query = "SELECT count(*) FROM `notifications` WHERE `".$column."` = ".$int_value;
-   // $query = "SELECT count(*) FROM `notifications` WHERE `".$column."` = ".$int_value AND  $applicant_id ='".$session->id."';
-    $total = $db->query($query);
-    $total = $db->fetch_array($total);
-    $total = array_shift($total);
-    return $total;  
-}
-
+    // get  total  Read And Unread notifications for the aplicant
+    //function pd_get_total_int($column, $int_value, $applicant_id)
+    function pd_get_total_int($column, $int_value){
+        global $db;
+        global $session;
+        //$query = "SELECT count(*) FROM `notifications` WHERE `".$column."` = ".$int_value;
+        $query = "SELECT count(*) FROM `notifications` WHERE `".$column."` = ".$int_value." AND  applicant_id ='".$session->id."'";
+        // print_r($query);
+        // die();
+        $total = $db->query($query);
+        $total = $db->fetch_array($total);
+        $total = array_shift($total);
+        return $total;  
+    }
               
     $Unread  = pd_get_total_int('status',1);
     $Read    = pd_get_total_int('status',2);
-    
+    $total_notifications = $Unread + $Read;
 
     // get all total notifications for the aplicant
     $feedback_sql = "SELECT count(*) FROM `feedbacks` WHERE applicant_id ='".$session->id."'";
@@ -52,7 +53,7 @@ function pd_get_total_int($column, $int_value){
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-            <a class="brand" href="#">Smart Web ( TPS )</a>
+            <a class="brand" href="#">University of Jos ( TPS )</a>
             <div class="nav-collapse collapse">
                 <p class="navbar-text pull-right">
                     Logged in as <a href="#" class="navbar-link"><?php echo $label; ?>
@@ -75,33 +76,33 @@ function pd_get_total_int($column, $int_value){
                     </li>
                    <li class="dropdown">
                                 <a href="#" id="drop3" role="button" class="dropdown-toggle" data-toggle="dropdown"><span><i class="icon-bell"></i>
-                                 </span> Notifications <span class="badge badge-important"><?php echo $total_notifications ; ?></span>
+                                 </span> Notifications <span class="badge badge-important"><?php if(isset($Unread)) echo $Unread; ?></span>
                                  <b class="caret"></b></a>
                                 <ul class="dropdown-menu" role="menu" aria-labelledby="drop3">
                                     <li class="nav-header">Active</li>
                                     <li>
-                                        <a tabindex="-1" href="cheak_notifications.php?type=1">Unread Notifications
+                                        <a tabindex="-1" href="check_notifications.php?type=1">Unread Notifications
                                          <span class="badge badge-important"><?php if(isset($Unread)) echo $Unread; ?></span></a>
                                     </li>
                                    
                                     <li class="divider"></li>
                                     <li class="nav-header">Inactive</li>
                                     <li>
-                                        <a tabindex="-1" href="cheak_notifications.php?type=2">Read Notifications 
+                                        <a tabindex="-1" href="check_notifications.php?type=2">Read Notifications 
                                             <span class="badge badge-success"><?php if(isset($Read)) echo $Read; ?></span></a>
                                     </li>
                                    
                                     <li class="divider"></li>
                                     <li class="nav-header">Send</li>
                                     <li>
-                                        <a tabindex="-1" href="cheack_my_feedbacks.php">Send feedback
-                                            <span class="badge badge-success"><?php echo $total_feedback ; ?></span></a>
+                                        <a tabindex="-1" href="check_my_feedbacks.php">Send feedback
+                                            <span class="badge badge-success"><?php if(isset($total_feedback)) echo $total_feedback; ?></span></a>
                                     </li>
                                     <li class="divider"></li>
                                     <li class="nav-header">ALL</li>
                                     <li>
-                                        <a tabindex="-1" href="cheak_notifications.php?type=3"><b>View All</b>
-                                            <span><i class="icon-chevron-right"></i> </span> <span class="badge badge-info"><?php echo $total_all; ?></span></a>
+                                        <a tabindex="-1" href="check_notifications.php?type=3"><b>View All</b>
+                                            <span><i class="icon-chevron-right"></i> </span> <span class="badge badge-info"><?php if(isset($total_notifications)) echo $total_notifications; ?></span></a>
                                     </li>
                                 </ul>
                             </li>

@@ -54,7 +54,7 @@
         <div id="displayinfo" class="modal hide" tabindex="-1" data-backdrop="static" data-keyboard="false" style="display: none;">
             <div class="modal-body ajax_data"></div>
             <div class="modal-footer">
-                <a href="#" class="btn" id="close">Close</a>
+                <a href="home.php" class="btn" id="close">Close</a>
             </div> 
         </div>
 
