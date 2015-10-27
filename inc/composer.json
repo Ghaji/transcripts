@@ -1,0 +1,16 @@
+{
+    "require": {
+        "nesbot/Carbon": "*",
+        "jasny/bootstrap": "*",
+		"jasny/formbuilder": "*",
+		"intervention/image": "~2.0",
+		"laracasts/validation": "~1.0",
+		"chumper/datatable": "2.*",
+		"fruitcakestudio/recaptcha": "~0.3",
+        "intervention/imagecache": "^2.3",
+        "symfony/config": "^2.6",
+        "symfony/yaml": "^2.6",
+        "psr/log": "^1.0",
+        "swiftmailer/swiftmailer": "^5.4"
+    }
+}

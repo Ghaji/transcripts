@@ -1,0 +1,32 @@
+{
+    "name": "jasny/formbuilder",
+    "description": "A form builder for HTML5 forms",
+    "keywords": ["forms", "html5"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Arnold Daniels",
+            "email": "arnold@jasny.net",
+            "homepage": "http://www.jasny.net"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/jasny/formbuilder/issues",
+        "source": "https://github.com/jasny/formbuilder"
+    },
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "require-dev": {
+        "gajus/dindent": "dev-master#cb8579d82d11873d5f650aab333c82f8f9eec62f"
+    },
+    "suggests": {
+        "gajus/dindent": "Use the Dindent decoractor to fix indentiation"
+    },
+    "autoload": {
+        "psr-0": {
+            "Jasny\\FormBuilder": "src/",
+            "Jasny\\FormGenerator": "src/"
+        }
+    }
+}

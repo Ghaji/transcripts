@@ -1,0 +1,9 @@
+Dear {APPLICANT},
+
+Thank-you for creating an account with University of Jos, Online Transcript System.
+
+To confirm your account, copy and paste the link below into your browsers address bar to continue.
+
+{SITEPATH}/verify.php?email={EMAIL}&key={KEY}
+
+Thanks!
